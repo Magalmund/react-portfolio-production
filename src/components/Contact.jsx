@@ -5,47 +5,60 @@ import {styles} from '../styles';
 import {EarthCanvas} from './canvas';
 import {SectionWrapper} from '../hoc';
 import {slideIn} from '../utils/motion';
+import {useFormik} from 'formik';
+import * as Yup from "yup";
+import Modal from "./UI/Modal/Modal.jsx";
 
 const Contact = () => {
-    const formRef = useRef()
-    const [form, setForm] = useState({name: '', email: '', message: ''})
+    const [modalActive, setModalActive] = useState(false);
     const [loading, setLoading] = useState(false);
-    const handleChange = (e) => {
-        const {name, value} = e.target;
-        setForm({...form, [name]: value})
-    }
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setLoading(true);
+    const formRef = useRef();
+    const formik = useFormik({
+        initialValues: {
+            name: '',
+            email: '',
+            message: '',
+        },
 
-        emailjs.send(
-            'service_wlrt3n6',
-            'template_kmzzc5g',
-            {
-                from_name: form.name,
-                to_name: 'Nikita',
-                from_email: form.email,
-                to_email: 'nikitaandrjeev@gmail.com',
-                message: form.message,
-            },
-            'Y8niJymjFSzqgFQTr'
-        ).then(() => {
-            setLoading(false);
-            alert('Thank you. I will get back to you as soon as possible');
-            setForm({
-                name: '',
-                email: '',
-                message: '',
+        validationSchema: Yup.object({
+            name: Yup.string().max(20, 'Name must be 20 characters or less.').required('Name is required.'),
+            email: Yup.string().email('Invalid email address.').required('Email is required.'),
+            message: Yup.string().required('Message is required.')
+        }),
+
+        onSubmit: (values) => {
+            console.log(values)
+            emailjs.send(
+                'service_wlrt3n6',
+                'template_kmzzc5g',
+                {
+                    from_name: values.name,
+                    to_name: 'Nikita',
+                    from_email: values.email,
+                    to_email: 'nikitaandrjeev@gmail.com',
+                    message: values.message,
+                },
+                'Y8niJymjFSzqgFQTr'
+            ).then(() => {
+                setLoading(false);
+                setModalActive(true)
+                values({
+                    name: '',
+                    email: '',
+                    message: '',
+                })
+            }, (error) => {
+                setLoading(false)
+                console.log(error)
+                alert('Something went wrong')
             })
-        }, (error) => {
-            setLoading(false)
-            console.log(error)
-            alert('Something went wrong')
-        })
+        }
+    })
+    const submitButton = () => {
+        setModalActive(true);
+        console.log(modalActive)
     }
-    //Y8niJymjFSzqgFQTr
-    //template_kmzzc5g
-    //service_wlrt3n6
+    console.log(modalActive)
     return (
         <div className="xl:mt12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
             <motion.div
@@ -57,45 +70,55 @@ const Contact = () => {
 
                 <form
                     ref={formRef}
-                    onSubmit={handleSubmit}
+                    onSubmit={formik.handleSubmit}
                     className="mt-12 flex flex-col gap-8"
                 >
-                    <label className="flex flex-col">
-                        <span className="text-white font-medium mb-4">Your name</span>
+                    <label htmlFor="name" className="flex flex-col">
+                        <span
+                            className={`font-medium mb-4 ${formik.touched.name && formik.errors.name ? 'text-red-400' : ''}`}>{formik.touched.name && formik.errors.name ? formik.errors.name : "Your name"}</span>
                         <input
+                            id="name"
                             type="text"
                             name="name"
-                            value={form.name}
-                            onChange={handleChange}
+                            value={formik.values.name}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
                             placeholder="What's your name?"
                             className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium"
                         />
                     </label>
-                    <label className="flex flex-col">
-                        <span className="text-white font-medium mb-4">Your email</span>
+                    <label htmlFor="email" className="flex flex-col">
+                        <span
+                            className={`font-medium mb-4 ${formik.touched.email && formik.errors.email ? 'text-red-400' : ''}`}>{formik.touched.email && formik.errors.email ? formik.errors.email : 'Your email'}</span>
                         <input
+                            id="email"
                             type="text"
                             name="email"
-                            value={form.email}
-                            onChange={handleChange}
+                            value={formik.values.email}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
                             placeholder="What's your email?"
                             className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium"
                         />
                     </label>
-                    <label className="flex flex-col">
-                        <span className="text-white font-medium mb-4">Message</span>
+                    <label htmlFor="message" className="flex flex-col">
+                        <span
+                            className={`font-medium mb-4 ${formik.touched.message && formik.errors.message ? 'text-red-400' : ''}`}>{formik.touched.message && formik.errors.message ? formik.errors.message : 'Message'}</span>
                         <textarea
+                            id="message"
                             rows="7"
                             name="message"
-                            value={form.message}
-                            onChange={handleChange}
+                            value={formik.values.message}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
                             placeholder="What do you want to say?"
-                            className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium"
+                            className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium resize-none"
                         />
                     </label>
                     <button
                         type="submit"
                         className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl"
+                        onClick={submitButton}
                     >
                         Send
                     </button>
@@ -107,6 +130,9 @@ const Contact = () => {
             >
                 <EarthCanvas/>
             </motion.div>
+            <Modal active={modalActive} setActive={setModalActive}>
+                <h1>Thank you. I will get back to you as soon as possible</h1>
+            </Modal>
         </div>
     )
 }
