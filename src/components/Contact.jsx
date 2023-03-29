@@ -12,6 +12,7 @@ import Modal from "./UI/Modal/Modal.jsx";
 const Contact = () => {
     const [modalActive, setModalActive] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
     const formRef = useRef();
     const formik = useFormik({
         initialValues: {
@@ -41,14 +42,17 @@ const Contact = () => {
                 'Y8niJymjFSzqgFQTr'
             ).then(() => {
                 setLoading(false);
-                setModalActive(true)
+                setError(false);
+                setModalActive(true);
                 values({
                     name: '',
                     email: '',
                     message: '',
                 })
             }, (error) => {
-                setLoading(false)
+                setLoading(false);
+                setError(true);
+                setModalActive(true);
                 console.log(error)
                 alert('Something went wrong')
             })
@@ -117,8 +121,7 @@ const Contact = () => {
                     </label>
                     <button
                         type="submit"
-                        className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl"
-                        onClick={submitButton}
+                        className="bg-tertiary py-3 px-8 outline-none w-full text-white font-bold shadow-md shadow-primary rounded-xl hover:shadow-none transition duration-300"
                     >
                         Send
                     </button>
@@ -131,7 +134,10 @@ const Contact = () => {
                 <EarthCanvas/>
             </motion.div>
             <Modal active={modalActive} setActive={setModalActive}>
-                <h1>Thank you. I will get back to you as soon as possible</h1>
+                {error
+                ? <h1>Something went wrong</h1>
+                : <h1>Thank you. I will get back to you as soon as possible</h1>
+                }
             </Modal>
         </div>
     )
