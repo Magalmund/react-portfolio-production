@@ -1,22 +1,25 @@
 import {BrowserRouter} from "react-router-dom";
 import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas} from './components'
+import Preloader from "./components/Preloader/Preloader.jsx";
+import Hero2 from "./components/Hero2.jsx";
 
 const App = () => {
   return (
     <BrowserRouter>
         <div className="relative z-0">
+            <Preloader/>
             <div>
                 <Navbar/>
-                <Hero/>
+                <Hero2/>
             </div>
             <About/>
-            <Experience/>
             <Tech/>
+            <Experience/>
             <Works/>
-            <Feedbacks/>
+            {/*<Feedbacks/>*/}
             <div className="relative z-0 bg-primary">
                 <Contact/>
-                <StarsCanvas/>
+                {/*<StarsCanvas/>*/}
             </div>
         </div>
     </BrowserRouter>

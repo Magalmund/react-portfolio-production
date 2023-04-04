@@ -6,18 +6,19 @@ import {styles} from "../styles";
 import {services} from "../constants";
 import {SectionWrapper} from "../hoc";
 import {fadeIn, textVariant} from "../utils/motion";
+import Tech from "./Tech.jsx";
 
 const ServiceCard = ({index, title, icon}) => {
     const defaultOptions = {
-        reverse:        false,  // reverse the tilt direction
-        max:            35,     // max tilt rotation (degrees)
-        perspective:    1000,   // Transform perspective, the lower the more extreme the tilt gets.
-        scale:          1,    // 2 = 200%, 1.5 = 150%, etc..
-        speed:          600,   // Speed of the enter/exit transition
-        transition:     true,   // Set a transition on enter/exit.
-        axis:           null,   // What axis should be disabled. Can be X or Y.
-        reset:          true,    // If the tilt effect has to be reset on exit.
-        easing:         "cubic-bezier(.03,.98,.52,.99)",    // Easing on enter/exit.
+        reverse:        false,
+        max:            35,
+        perspective:    1000,
+        scale:          1,
+        speed:          600,
+        transition:     true,
+        axis:           null,
+        reset:          true,
+        easing:         "cubic-bezier(.03,.98,.52,.99)",
         gyroscope:      true
     }
     return(
@@ -70,11 +71,11 @@ const About = () => {
                 real-world problems. Let's work together to bring your ideas to life!
             </motion.p>
 
-            <div className='mt-20 flex flex-wrap gap-10'>
-                {services.map((service, index) => (
-                    <ServiceCard key={service.title} index={index} {...service} />
-                ))}
-            </div>
+            {/*<div className='mt-20 flex flex-wrap gap-10'>*/}
+            {/*    {services.map((service, index) => (*/}
+            {/*        <ServiceCard key={service.title} index={index} {...service} />*/}
+            {/*    ))}*/}
+            {/*</div>*/}
         </>
     );
 };
