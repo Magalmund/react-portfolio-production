@@ -4,7 +4,7 @@ import {
     Decal,
     Float,
     OrbitControls,
-    Preload,
+    Preload, Sphere,
     useTexture,
 } from "@react-three/drei";
 

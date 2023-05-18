@@ -7,29 +7,37 @@ const tl = gsap.timeline({defaults: {ease: "power1.out"}});
 // Preloader Animation
 
 export const preloaderAnimation = () => {
+    tl.to("body", {
+        duration: 0.1,
+        css: {overflow: "hidden"},
+        ease: "power3.inOut",
+    })
     tl.to('.slider', {
-        y:"-100%",
         duration: 1.25,
+        y: "-100%",
         delay: 4.5,
     })
-        .to(".preloader", {
-        y:"-100%",
+    tl.to(".preloader", {
+        y: "-100%",
         duration: 1,
-    }, '-=1');
+    }, '-=1')
+    tl.to("body", {
+        duration: 0.1,
+        css: {overflowY: "scroll"},
+        ease: "power3.inOut",
+    })
 }
-
-
 
 
 export const preLoaderAnim = () => {
     tl.to("body", {
         duration: 0.1,
-        css: { overflowY: "hidden" },
+        css: {overflowY: "hidden"},
         ease: "power3.inOut",
     })
         .to(".landing", {
             duration: 0.05,
-            css: { overflowY: "hidden", height: "90vh" },
+            css: {overflowY: "hidden", height: "90vh"},
         })
         .to(".texts-container", {
             duration: 0,
@@ -46,7 +54,7 @@ export const preLoaderAnim = () => {
         })
         .to(".texts-container span", {
             duration: 1,
-            y: 70,
+            y: 90,
             skewY: -20,
             stagger: 0.2,
             ease: "Power3.easeOut",
@@ -54,11 +62,11 @@ export const preLoaderAnim = () => {
 
         .to(".landing", {
             duration: 0.05,
-            css: { overflowY: "hidden", height: "unset" },
+            css: {overflowY: "hidden", height: "unset"},
         })
         .to("body", {
             duration: 0.1,
-            css: { overflowY: "scroll" },
+            css: {overflowY: "scroll"},
             ease: "power3.inOut",
         })
         .from(".landing__top .sub", {
@@ -113,7 +121,7 @@ export const preLoaderAnim = () => {
         })
         .to(".preloader", {
             duration: 0,
-            css: { display: "none" },
+            css: {display: "none"},
         });
 };
 
@@ -121,21 +129,21 @@ export const openMenu = () => {
     const tl = gsap.timeline();
     tl.to("body", {
         duration: 0.1,
-        css: { overflowY: "hidden" },
+        css: {overflowY: "hidden"},
         ease: "power3.out",
     })
         .to(".hamburger-menu", {
             duration: 0.1,
-            css: { display: "block" },
+            css: {display: "block"},
         })
         .to(".header-item", {
             duration: 0.1,
-            css: { background: "none" },
+            css: {background: "none"},
         })
         .to(".cls-1", {
             duration: 0.1,
             delay: 0.3,
-            css: { fill: "#ffffff" },
+            css: {fill: "#ffffff"},
         })
         .to(
             [".nav-secondary", ".nav-primary"],
@@ -175,7 +183,7 @@ export const closeMenu = () => {
     const tl = gsap.timeline();
     tl.to("body", {
         duration: 0.05,
-        css: { overflowY: "scroll" },
+        css: {overflowY: "scroll"},
         ease: "power3.inOut",
     })
         .to([".nav-primary", ".nav-secondary"], {
@@ -190,15 +198,15 @@ export const closeMenu = () => {
         .to(".cls-1", {
             duration: 0.1,
             delay: -0.3,
-            css: { fill: "#08e7f3" },
+            css: {fill: "#08e7f3"},
         })
         .to(".header-item", {
             duration: 0.5,
-            css: { background: "rgba(11,11,15,.8)" },
+            css: {background: "rgba(11,11,15,.8)"},
         })
         .to(".hamburger-menu", {
             duration: 0.05,
-            css: { display: "none" },
+            css: {display: "none"},
         });
 
     // tl.to(".cursor-active", {

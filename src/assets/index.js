@@ -1,4 +1,5 @@
 import logo from "./logo.svg";
+import logoBlack from "./logo-black.svg";
 import backend from "./backend.png";
 import creator from "./creator.png";
 import mobile from "./mobile.png";
@@ -22,10 +23,9 @@ import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.png";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
+import hosting from "./company/hosting.png";
+import rjnet from "./company/rj.png";
+import freelancer from "./company/freelancer.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
@@ -33,6 +33,7 @@ import tripguide from "./tripguide.png";
 
 export {
     logo,
+    logoBlack,
     backend,
     creator,
     mobile,
@@ -54,10 +55,9 @@ export {
     tailwind,
     typescript,
     threejs,
-    meta,
-    shopify,
-    starbucks,
-    tesla,
+    hosting,
+    rjnet,
+    freelancer,
     carrent,
     jobit,
     tripguide,
