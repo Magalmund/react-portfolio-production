@@ -42,12 +42,12 @@ const ExperienceCard = ({experience}) => {
         </ VerticalTimelineElement>
     )
 }
-const Experience = () => {
+const Experience = ({id}) => {
     return (
-        <>
+        <div id={id}>
             <div>
-                <motion.h2 variants={fadeIn("right", "Spring", 0.3, 2)} className={styles.sectionHeadText}>Work experience</motion.h2>
-                <motion.p variants={fadeIn("right", "Spring", 0.6, 2)} className={styles.sectionSubText}>"What have done so far"</motion.p>
+                <motion.h2 variants={fadeIn("right", "Spring", 0.3, 1)} className={styles.sectionHeadText}>Work experience</motion.h2>
+                <motion.p variants={fadeIn("right", "Spring", 0.6, 1)} className={styles.sectionSubText}>"What have done so far"</motion.p>
             </div>
             <div className="mt-20 flex flex-col">
                 <VerticalTimeline lineColor={"#000"}>
@@ -56,7 +56,7 @@ const Experience = () => {
                     ))}
                 </VerticalTimeline>
             </div>
-        </>
+        </div>
     )
 }
 

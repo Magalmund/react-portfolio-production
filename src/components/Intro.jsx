@@ -63,7 +63,7 @@ const Intro = () => {
                         x: 0,
                         transition: {
                             type: "Spring",
-                            delay: 6.75,
+                            delay: 7,
                             duration: 2,
                             ease: "easeOut"
                         }

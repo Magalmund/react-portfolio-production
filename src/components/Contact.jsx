@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import emailjs from "@emailjs/browser";
 import {styles} from "../styles.js";
 import {motion} from "framer-motion";
-import {slideIn} from "../utils/motion.js";
+import {fadeIn, slideIn} from "../utils/motion.js";
 import {EarthCanvas, StarsCanvas} from "../components/index.js";
 import Modal from "../components/UI/Modal/Modal.jsx";
 import {Link} from "react-router-dom";
@@ -66,9 +66,21 @@ const Contact = () => {
         <div className="bg-[#212121]">
             <section
                 className={`${styles.padding} max-w-7xl container relative z-[1] xl:w-full xl:h-screen xl:mx-auto xl:flex xl:flex-row xl:flex-wrap xl:justify-between xl:items-center xl:inset-0 xl:gap-5`}>
-                <div className="xl:flex-row flex-col-reverse flex gap-8 overflow-hidden xl:w-full xl:max-h-[730px] xl:justify-center">
+                <div className="xl:flex-row flex-col-reverse flex gap-8 xl:w-full xl:max-h-[730px] xl:justify-center">
                     <motion.div
-                        variants={slideIn('left', 'tween', 0.2, 1)}
+                        initial={{
+                            opacity: 0,
+                            x: -200
+                        }}
+                        animate={{
+                            opacity: 1,
+                            x: 0,
+                            transition: {
+                                delay: 6.75,
+                                duration: 2,
+                                type: "Spring"
+                            }
+                        }}
                         className="flex-[0.75] bg-white rounded-2xl lg:padding-[1.5rem] xl:h-max p-4 md:p-8 lg:p-4 2xl:p-8"
                     >
                         <h3 className={styles.contactHeadText}>Contact</h3>
@@ -130,7 +142,19 @@ const Contact = () => {
                         </form>
                     </motion.div>
                     <motion.div
-                        variants={slideIn('right', 'tween', 0.2, 1)}
+                        initial={{
+                            opacity: 0,
+                            x: 0
+                        }}
+                        animate={{
+                            opacity: 1,
+                            x: 0,
+                            transition: {
+                                delay: 7,
+                                duration: 2,
+                                type: "Spring"
+                            }
+                        }}
                         className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
                     >
                         <EarthCanvas/>
@@ -138,7 +162,7 @@ const Contact = () => {
                     <Modal active={modalActive} setActive={setModalActive}>
                         {error
                             ? <h1>Something went wrong</h1>
-                            : <h1>Thank you. I will get back to you as soon as possible</h1>
+                            : <h1>Thank you. I will get back to you as soon as possible.</h1>
                         }
                     </Modal>
                 </div>
@@ -153,7 +177,7 @@ const Contact = () => {
                     opacity: 1,
                     y: 0,
                     transition: {
-                        delay: 3,
+                        delay: 7.25,
                         duration: 2,
                         type: "Spring"
                     }

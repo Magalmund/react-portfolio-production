@@ -49,16 +49,16 @@ const ProjectCard = ({index, name, description, tags, image, source_code_link}) 
 }
 
 
-const Works = () => {
+const Works = ({id}) => {
     return (
-        <>
-            <motion.div variants={textVariant()}>
-                <h2 className={styles.sectionHeadText}>Projects</h2>
-                <p className={styles.sectionSubText}>"My work"</p>
-            </motion.div>
+        <div id={id}>
+            <div>
+                <motion.h2 variants={fadeIn("right", "Spring", 0.3, 1)} className={styles.sectionHeadText}>Projects</motion.h2>
+                <motion.p variants={fadeIn("right", "Spring", 0.6, 1)} className={styles.sectionSubText}>"My work"</motion.p>
+            </div>
             <div className="w-full flex">
                 <motion.p
-                    variants={fadeIn("", "", 0.1, 1)}
+                    variants={fadeIn("right", "Spring", 0.9, 1)}
                     className="mt-3 text-black text-[17px] max-w-3xl leading-[30px]"
                 >
                     Following projects showcases my skills and experience through
@@ -77,7 +77,7 @@ const Works = () => {
                     />
                 ))}
             </div>
-        </>
+        </div>
     )
 }
 

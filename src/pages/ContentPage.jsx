@@ -8,14 +8,15 @@ import '../morph.css'
 import Preloader from "../components/Preloader/Preloader.jsx";
 
 const ContentPage = () => {
+
     return (
         <div className="pb-24 morph">
             <Preloader color="grey"/>
             <Nav/>
-            <About/>
+            <About id="about"/>
             <Tech/>
-            <Experience/>
-            <Works/>
+            <Experience id="experience"/>
+            <Works id="works"/>
         </div>
     );
 };

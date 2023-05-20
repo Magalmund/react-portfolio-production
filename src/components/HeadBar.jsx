@@ -9,7 +9,7 @@ const HeadBar = () => {
 
     return (
         <div
-            className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20`}
+            className={`${styles.paddingX} w-full flex items-center justify-center py-5 fixed top-0 z-20`}
         >
             <div className="w-full flex justify-between items-center max-w-[1920px]">
                 <Link
