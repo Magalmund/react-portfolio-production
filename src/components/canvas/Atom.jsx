@@ -15,24 +15,23 @@ const Shape = (mobile) => {
     );
     return (
         <group
-            position={mobile.mobile ? [0, -1.3, 0] : [0, 0, 0]}
+            position={mobile.mobile ? [0, -0.5, 0] : [0, 0, 0]}
         >
             <Line
-                scale={0.75}
+                scale={0.65}
                 worldUnits points={points}
                 color="#fff"
                 lineWidth={0.05}/>
             <Line
-                scale={0.75}
+                scale={0.65}
                 worldUnits
                 points={points}
                 color="#fff"
                 lineWidth={0.05}
                 rotation={[0, 0, 1]}
             />
-            {/*color="#cae6f1"*/}
             <Line
-                scale={0.75}
+                scale={0.65}
                 worldUnits
                 points={points}
                 color="#fff"
@@ -41,7 +40,7 @@ const Shape = (mobile) => {
             />
             <Sphere
                 args={[0.55, 64, 64]}
-                scale={0.6}
+                scale={0.5}
             >
                 <meshBasicMaterial color={[0, 4, 25]} toneMapped={false}/>
             </Sphere>

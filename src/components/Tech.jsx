@@ -37,7 +37,7 @@ const Tech = () => {
 
     return (
         <motion.section
-            variants={staggerContainer(0.25, 0.3)}
+            variants={staggerContainer(0.25, 7)}
             initial='hidden'
             whileInView='show'
             viewport={{once: true, amount: 0.25}}

@@ -75,7 +75,7 @@ const Intro = () => {
                 <motion.div
                     initial={{
                         opacity: 0,
-                        y: 100
+                        y: -100
                     }}
                     animate={{
                         opacity: 1,
@@ -86,7 +86,7 @@ const Intro = () => {
                             type: "Spring"
                         }
                     }}
-                    className="absolute bottom-6 lg:bottom-12 w-full flex justify-center items-center z-[1]"
+                    className="absolute bottom-32 md:bottom-16 lg:bottom-12 w-full flex justify-center items-center z-[1]"
                 >
                     <Link
                         className="

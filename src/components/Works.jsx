@@ -4,11 +4,12 @@ import {styles} from '../styles';
 import {github} from '../assets';
 import {SectionWrapper} from '../hoc';
 import {projects} from '../constants';
-import {fadeIn, textVariant} from '../utils/motion';
+import {fadeIn} from '../utils/motion';
 import React from "react";
+import {FaGithub, FaLink} from "react-icons/fa";
 
 
-const ProjectCard = ({index, name, description, tags, image, source_code_link}) => {
+const ProjectCard = ({index, name, description, tags, image, source_code_link, web_link}) => {
     return (
         <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
             <Tilt
@@ -30,7 +31,13 @@ const ProjectCard = ({index, name, description, tags, image, source_code_link}) 
                             onClick={() => window.open(source_code_link, "_blank")}
                             className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
                         >
-                            <img src={github} alt="github" className="w-1/2 h-1/2 object-contain"/>
+                            <FaGithub className="w-1/2 h-1/2 object-contain"/>
+                        </div>
+                        <div
+                            onClick={() => window.open(web_link, "_blank")}
+                            className="ml-[10px] black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+                        >
+                            <FaLink className="w-1/2 h-1/2 object-contain"/>
                         </div>
                     </div>
                 </div>

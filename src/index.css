@@ -14,9 +14,25 @@
     color-scheme: dark;
 }
 
+/* Hide scrollbar for IE, Edge and Firefox */
 html {
     background-color: #fff;
-    scrollbar-width: none;
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+    overflow:scroll;
+    scroll-behavior:smooth;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+html::-webkit-scrollbar {
+    display:none;
+}
+body {
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display:none;
 }
 
 .hash-span {

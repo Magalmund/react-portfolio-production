@@ -1,6 +1,5 @@
 import gsap from "gsap";
 
-// Declare a general timeline to use in all the animation functions.
 
 const tl = gsap.timeline({defaults: {ease: "power1.out"}});
 
@@ -60,38 +59,6 @@ export const preLoaderAnim = () => {
             },
             "-=2"
         )
-        // .from(".landing__main .text", {
-        //     duration: 2,
-        //     y: 10,
-        //     opacity: 0,
-        //     stagger: {
-        //         amount: 2,
-        //     },
-        //     ease: "power3.easeInOut",
-        // })
-        // .from(".links .item", {
-        //     duration: 0.5,
-        //     opacity: 0,
-        //     delay: window.innerWidth < 763 ? -3 : -0.6,
-        //     stagger: {
-        //         amount: 0.5,
-        //     },
-        //     ease: "expo.easeOut",
-        //     onComplete: animateMainShape(),
-        // })
-        // .from(".main-circle", {
-        //     duration: 1,
-        //     opacity: 0,
-        //     ease: "power3.easeInOut",
-        //     onComplete: animateShapes(),
-        // })
-        // .from(".shapes .shape", {
-        //     duration: 1,
-        //     opacity: 0,
-        //     delay: -1,
-        //     ease: "power3.easeInOut",
-        //     stagger: 1,
-        // })
         .to(".preloader", {
             duration: 0,
             css: {display: "none"},
@@ -111,86 +78,6 @@ export const mobileLanding = () => {
     });
 };
 
-// const animateShapes = () => {
-//     const infiniteTl = gsap.timeline({
-//         repeat: -1,
-//     });
-//     infiniteTl
-//         .to(".shapes .shape", {
-//             duration: 4,
-//             rotate: 360,
-//             delay: -1,
-//             ease: "power3.easeInOut",
-//             stagger: 2,
-//         })
-//         .to(".shapes .shape-3", {
-//             duration: 1,
-//             rotate: 360,
-//             delay: -2,
-//             ease: "power3.easeInOut",
-//         })
-//         .to(".shapes .shape", {
-//             duration: 3,
-//             rotate: 0,
-//             ease: "power3.easeInOut",
-//             stagger: 1,
-//         })
-//         .to(".shapes .shape", {
-//             duration: 1,
-//             opacity: 0,
-//             delay: -1,
-//             ease: "power3.easeInOut",
-//             stagger: 1,
-//         })
-//         .to(".shapes .shape", {
-//             duration: 1.5,
-//             opacity: 1,
-//             ease: "power3.easeInOut",
-//             stagger: 1,
-//         });
-// };
-//
-// const animateMainShape = () => {
-//     const infiniteTl = gsap.timeline({
-//         repeat: -1,
-//     });
-//     infiniteTl
-//         .to(".shapes .main-circle", {
-//             duration: 6,
-//             x: -30,
-//             y: -50,
-//             ease: "expo.easeOut",
-//         })
-//         .to(".shapes .main-circle", {
-//             duration: 6,
-//             x: -30,
-//             y: 50,
-//             ease: "expo.easeOut",
-//         })
-//         .to(".shapes .main-circle", {
-//             duration: 4,
-//             x: 0,
-//             y: 0,
-//             ease: "expo.easeOut",
-//         });
-// };
-//
-// export const boxHover = (e) => {
-//     const tl = gsap.timeline();
-//     window.innerWidth >= 986 &&
-//     tl
-//         .to(e.target.querySelector(".link"), {
-//             duration: 0,
-//             opacity: 1,
-//         })
-//         .from(e.target.querySelectorAll(".box-anim"), {
-//             duration: 0.3,
-//             opacity: 0,
-//             y: 30,
-//             stagger: 0.1,
-//             ease: "Power3.easeOut",
-//         });
-// };
 
 export const fadeIn = (el) => {
     gsap.to(el, {
