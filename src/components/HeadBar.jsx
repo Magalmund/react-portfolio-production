@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {styles} from "../styles.js";
 import {Link, useLocation} from "react-router-dom";
 import {motion} from "framer-motion";
-import {logo, logoBlack} from "../assets/index.js";
+import {logo} from "../assets/index.js";
 
 const HeadBar = () => {
 

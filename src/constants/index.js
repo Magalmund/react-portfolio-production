@@ -1,8 +1,5 @@
 import {
-    mobile,
-    backend,
-    creator,
-    web,
+    messenger,
     javascript,
     typescript,
     html,
@@ -19,7 +16,6 @@ import {
     rjnet,
     freelancer,
     carrent,
-    jobit,
     tripguide,
     threejs,
 } from "../assets";
@@ -45,25 +41,6 @@ export const navLinks = [
     {
         id: "contact",
         title: "Contact",
-    },
-];
-
-const services = [
-    {
-        title: "Web Developer",
-        icon: web,
-    },
-    {
-        title: "React Native Developer",
-        icon: mobile,
-    },
-    {
-        title: "Backend Developer",
-        icon: backend,
-    },
-    {
-        title: "Content Creator",
-        icon: creator,
     },
 ];
 
@@ -215,9 +192,9 @@ const projects = [
         web_link: "https://react-rent-project.vercel.app/",
     },
     {
-        name: "Car Rent",
+        name: "Real-time messenger",
         description:
-            "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+            "Real-time messenger project designed to connect users seamlessly and facilitate instant communication",
         tags: [
             {
                 name: "react",
@@ -232,14 +209,14 @@ const projects = [
                 color: "pink-text-gradient",
             },
         ],
-        image: carrent,
+        image: messenger,
         source_code_link: "https://github.com/",
         web_link: "https://magalmund.com/"
     },
     {
-        name: "Job IT",
+        name: "Car Rent",
         description:
-            "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+            "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
         tags: [
             {
                 name: "react",
@@ -254,10 +231,10 @@ const projects = [
                 color: "pink-text-gradient",
             },
         ],
-        image: jobit,
+        image: carrent,
         source_code_link: "https://github.com/",
         web_link: "https://magalmund.com/"
     },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { technologies, experiences, testimonials, projects };
