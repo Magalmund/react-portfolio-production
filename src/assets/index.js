@@ -19,8 +19,10 @@ import threejs from "./tech/threejs.png";
 import hosting from "./company/hosting.png";
 import rjnet from "./company/rj.png";
 import freelancer from "./company/freelancer.png";
+import relax from "./company/relax.png";
 
-import carrent from "./carrent.png";
+
+import schedule from "./schedule.png";
 import tripguide from "./tripguide.png";
 
 export {
@@ -43,6 +45,7 @@ export {
     hosting,
     rjnet,
     freelancer,
-    carrent,
+    relax,
+    schedule,
     tripguide,
 };

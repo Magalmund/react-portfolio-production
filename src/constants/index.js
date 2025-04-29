@@ -15,9 +15,10 @@ import {
     hosting,
     rjnet,
     freelancer,
-    carrent,
     tripguide,
     threejs,
+    relax,
+    schedule,
 } from "../assets";
 
 export const navLinks = [
@@ -119,7 +120,7 @@ const experiences = [
         company_name: "RJ Network OÜ",
         icon: rjnet,
         iconBg: "#fff",
-        date: "May 2019 - July 2020",
+        date: "May 2019 - July 2021",
         points: [
             "Building websites that are responsive and usable.",
             "Collaborating closely with the team to support projects during all phases of delivery.",
@@ -133,10 +134,23 @@ const experiences = [
         company_name: "Freelancer",
         icon: freelancer,
         iconBg: "#fff",
-        date: "July 2020 - Present",
+        date: "July 2021 - December 2023",
         points: [
             "Developing and maintaining web applications using React.js and other related technologies.",
             "Implementing responsive design and ensuring cross-browser compatibility.",
+        ],
+    },
+    {
+        title: "Partner Support Engineer",
+        company_name: "Relax Gaming Ltd",
+        icon: relax,
+        iconBg: "#fff",
+        date: "December 2023 - Present",
+        points: [
+            "Monitoring and analysis.",
+            "Detecting anomalies and promptly responding to alerts.",
+            "Ensuring a seamless flow of communication and knowledge sharing to meet organizational goals.",
+            "Troubleshooting and resolving technical issues swiftly."
         ],
     },
 ];
@@ -190,6 +204,7 @@ const projects = [
         image: tripguide,
         source_code_link: "https://github.com/Magalmund/react-airbnb",
         web_link: "https://react-rent-project.vercel.app/",
+        status: true
     },
     {
         name: "Real-time messenger",
@@ -210,13 +225,14 @@ const projects = [
             },
         ],
         image: messenger,
-        source_code_link: "https://github.com/",
-        web_link: "https://magalmund.com/"
+        source_code_link: "https://github.com/Magalmund/react-messenger",
+        web_link: "https://react-messenger-production.vercel.app/",
+        status: true
     },
     {
-        name: "Car Rent",
+        name: "Employee schedule",
         description:
-            "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+            "Web-based tool that enables managers and employees to create, view, and manage work schedules, streamlining shift planning and ensuring efficient workforce coordination.",
         tags: [
             {
                 name: "react",
@@ -231,9 +247,10 @@ const projects = [
                 color: "pink-text-gradient",
             },
         ],
-        image: carrent,
-        source_code_link: "https://github.com/",
-        web_link: "https://magalmund.com/"
+        image: schedule,
+        source_code_link: "https://github.com/Magalmund",
+        web_link: "https://magalmund.com/",
+        status: false
     },
 ];
 

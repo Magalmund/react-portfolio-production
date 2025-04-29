@@ -9,7 +9,7 @@ import React from "react";
 import {FaGithub, FaLink} from "react-icons/fa";
 
 
-const ProjectCard = ({index, name, description, tags, image, source_code_link, web_link}) => {
+const ProjectCard = ({index, name, description, tags, image, source_code_link, web_link, status}) => {
     return (
         <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
             <Tilt
@@ -26,7 +26,11 @@ const ProjectCard = ({index, name, description, tags, image, source_code_link, w
                         alt={name}
                         className="w-full h-full object-cover rounded-2xl"
                     />
-                    <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
+                    {!status &&
+                        <h2 className="absolute text-2xl top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-50%] z-10">Coming Soon</h2>
+                    }
+                    <div
+                        className={status ? "absolute inset-0 flex justify-end m-3 card-img_hover" : "absolute inset-0 flex justify-end card-img_hover m-0 bg-[#000000c2] rounded-2xl"}>
                         <div
                             onClick={() => window.open(source_code_link, "_blank")}
                             className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
