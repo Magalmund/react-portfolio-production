@@ -29,7 +29,7 @@ const Intro = () => {
                             }}
                             className={`${styles.heroHeadText} text-white`}
 
-                        >Hi, I'm Magalmund
+                        >Hi, I'm Nikita
                         </motion.h1>
                         <motion.p
                             initial={{

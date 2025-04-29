@@ -29,7 +29,7 @@ const Hero = () => {
                         }}
                         className={`${styles.heroHeadText} text-white`}
 
-                    >Hi, I'm <span className="text-[#915eff]">Magalmund</span>
+                    >Hi, I'm <span className="text-[#915eff]">Nikita</span>
                     </motion.h1>
                     <motion.p
                         initial={{

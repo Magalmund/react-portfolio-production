@@ -212,7 +212,7 @@ const projects = [
             "Real-time messenger project designed to connect users seamlessly and facilitate instant communication",
         tags: [
             {
-                name: "react",
+                name: "nextjs",
                 color: "blue-text-gradient",
             },
             {
@@ -239,11 +239,11 @@ const projects = [
                 color: "blue-text-gradient",
             },
             {
-                name: "restapi",
+                name: "mongodb",
                 color: "green-text-gradient",
             },
             {
-                name: "scss",
+                name: "tailwind",
                 color: "pink-text-gradient",
             },
         ],
