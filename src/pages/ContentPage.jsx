@@ -13,7 +13,7 @@ const ContentPage = () => {
         <div className="pb-24 morph">
             <Preloader color="grey"/>
             <Nav/>
-            <div className="w-full h-screen flex flex-col items-center justify-center">
+            <div className="w-full min-h-screen flex flex-col items-center justify-center">
                 <About id="about"/>
                 <Tech/>
             </div>

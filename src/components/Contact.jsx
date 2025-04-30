@@ -182,7 +182,7 @@ const Contact = () => {
                         type: "Spring"
                     }
                 }}
-                className="relative xl:absolute bottom-6 lg:bottom-12 w-full flex justify-center items-center z-[1]"
+                className="relative mt-6 xl:mt-0 xl:absolute bottom-6 lg:bottom-12 w-full flex justify-center items-center z-[1]"
             >
                 <Link
                     className="
